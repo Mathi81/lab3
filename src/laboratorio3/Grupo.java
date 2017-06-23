@@ -2,24 +2,21 @@ package laboratorio3;
 
 import java.util.HashSet;
 
-public class Grupos {
+public class Grupo {
 
 	private String nome;
 
 	private HashSet<Aluno> listaDeAlunos = new HashSet<>();
 
-	public Grupos(String nome) {
+	public Grupo(String nome) {
 		
 		this.nome = nome;
 	}
 
-	public void adicionarAlunos(String matricula) {
-
-		Sistema listaAluno = new Sistema();
-
-		Aluno aluno = listaAluno.getMapaMatriculaDeAlunos().get(matricula);
+	public boolean adicionarAlunos(Aluno aluno) {
 
 		this.listaDeAlunos.add(aluno);
+		return true;
 
 	}
 
