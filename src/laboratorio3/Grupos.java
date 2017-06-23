@@ -8,6 +8,11 @@ public class Grupos {
 
 	private HashSet<Aluno> listaDeAlunos = new HashSet<>();
 
+	public Grupos(String nome) {
+		
+		this.nome = nome;
+	}
+
 	public void adicionarAlunos(String matricula) {
 
 		Sistema listaAluno = new Sistema();
