@@ -58,7 +58,7 @@ public class Sistema {
 		else {
 
 			if (grupo.getListaDeAlunos().contains(aluno)) {
-				return null;
+				return "ALUNO ALOCADO!";
 			} else {
 				grupo.adicionarAlunos(aluno);
 
