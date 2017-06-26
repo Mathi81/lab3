@@ -26,11 +26,11 @@ public class Sistema {
 		try {
 			String tostringAluno = this.mapaMatriculaDeAlunos.get(matricula).toString();
 
-			return "Matrícula: " + matricula + System.lineSeparator() + tostringAluno;
+			return tostringAluno;
 
 		} catch (NullPointerException e) {
 
-			return "Matrícula: " + matricula + System.lineSeparator() + "Aluno não cadastrado.";
+			return "Aluno não cadastrado.";
 
 		}
 
@@ -51,10 +51,13 @@ public class Sistema {
 
 		Aluno aluno = this.mapaMatriculaDeAlunos.get(matricula);
 
-		if (grupo == null)
+		if ((grupo == null) && (aluno == null))
+			return "Grupo e aluno não cadastrado.";
+		else if (grupo == null)
 			return "Grupo não cadastrado.";
 		else if (aluno == null)
 			return "Aluno não cadastrado.";
+		
 		else {
 
 			if (grupo.getListaDeAlunos().contains(aluno)) {
@@ -115,12 +118,12 @@ public class Sistema {
 	
 	public String imprimirAlunosQueRespondemQuestoes () {
 		String alunos = "";
-		int i = 0;
+		int i = 1;
 		for (Aluno aluno : this.listaDeQuestoes) {
 			
-			alunos += i++ + "." + aluno.toString() +System.lineSeparator();
+			alunos += i++ + ". " + aluno.toString() +System.lineSeparator();
 			
 		}
-		return "Alunos:" + alunos;
+		return "Alunos:" + System.lineSeparator() + alunos;
 	}
 }

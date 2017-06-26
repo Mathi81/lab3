@@ -2,7 +2,7 @@ package laboratorio3;
 
 import java.util.Scanner;
 
-public class MainTestes {
+public class Main {
 
 	public static void main(String[] args) throws Exception {
 
